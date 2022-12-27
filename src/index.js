@@ -7,7 +7,10 @@ const app = express();
 const routes = express.Router();
 const port = process.env.PORT || 4000;
 
-app.use(cors());
+app.use(cors({
+    origin: '*',
+    credentials: true
+  }));
 app.use(express.json());
 app.use("/guests", routes);
 dotenv.config();
